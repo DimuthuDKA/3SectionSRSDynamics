@@ -1,0 +1,19 @@
+function J=Tb(q)
+x=q(1);
+y=q(2);
+z=q(3);
+alpha=q(4);
+beta=q(5);
+eta=q(6);
+t11 = sin(alpha);
+t15 = sin(eta);
+t20 = t15 * t11;
+t12 = cos(alpha);
+t19 = t15 * t12;
+t16 = cos(eta);
+t18 = t16 * t11;
+t17 = t16 * t12;
+t14 = cos(beta);
+t13 = sin(beta);
+J = [t16 * t14 t13 * t18 - t19 t13 * t17 + t20 x; t15 * t14 t13 * t20 + t17 t13 * t19 - t18 y; -t13 t14 * t11 t14 * t12 z; 0 0 0 1;];
+
